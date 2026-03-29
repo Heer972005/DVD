@@ -25,7 +25,15 @@ plt.ylabel("Avg Screen Time")
 
 plt.show()
 
-sns.barplot(x="Age Group", y="daily_screen_time_hours", data=df)
+sns.barplot(x="Age Group", 
+            y="daily_screen_time_hours", 
+            data=df,
+            palette="viridis",
+            edgecolor="black")
 
 plt.title("Average Smartphone Usage by Age Group")
+plt.xlabel("Age Group", fontsize=12)
+plt.ylabel("Avg Screen Time (hours)", fontsize=12)
+
+plt.xticks(rotation=30)
 plt.show()
