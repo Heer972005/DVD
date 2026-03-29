@@ -18,14 +18,25 @@ for name, group in grouped:
     groups.append(group["daily_screen_time_hours"].values)
     labels.append(name)
 
-plt.boxplot(groups, tick_labels=labels)
+plt.boxplot(groups,
+            tick_labels=labels,
+            patch_artist=True,          # enables color
+            showfliers=True)
 
 plt.title("Box Plot of Usage by Age Group")
 plt.xlabel("Age Group")
 plt.ylabel("Screen Time")
-
+plt.grid(axis='y', alpha=0.5)
 plt.show()
 
-sns.boxplot(x="Age Group", y="daily_screen_time_hours", data=df)
+sns.boxplot(x="Age Group",
+            y="daily_screen_time_hours",
+            data=df,
+            palette="Set2",
+            showfliers=True)
+plt.title("Distribution of Smartphone Usage by Age Group", fontsize=14)
+plt.xlabel("Age Group")
+plt.ylabel("Screen Time (hours)")
 
+plt.xticks(rotation=20)
 plt.show()
